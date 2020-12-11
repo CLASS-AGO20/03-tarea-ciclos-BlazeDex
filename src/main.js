@@ -56,7 +56,29 @@ return string;
 
 }
 
+obtenerImpares(numero1, numero2) {
+    
+    if(numero1 > numero2) {
+        let c = numero1;
+        numero1 = numero2;
+        numero2 = c;
+    }
+    let i = numero1;    
+    let string = 0
 
+    do {
+        if(i % 2 !== 0) {
+            if(string === 0) {
+            string = i + string;
+            string = string.toString();
+        } else {
+            string = i + "," + string;
+        }                    
+        }
+        i++;
+    } while(i <= numero2);
+    return string;
+}
 
 }
 
@@ -69,3 +91,5 @@ console.log("Probando: esPrimo()");
 console.log(app.esPrimo(131));
 console.log("Probando: obtenerMultiplos()");
 console.log(app.obtenerMultiplos(1,9));
+console.log("Probando: obtenerImpares()");
+console.log(app.obtenerImpares(5, 15));
